@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="projector_mode_options" translatable="true">
+        <item>正装正投</item>
+        <item>正装背投</item>
+        <item>倒装正投</item>
+        <item>倒装背投</item>
+    </string-array>
+
+    <string-array name="projector_proportion_options" translatable="false">
+        <item>16:9</item>
+        <item>16:10</item>
+        <item>4:3</item>
+    </string-array>
+
+    <string-array name="sound_spdif_options" translatable="false">
+        <item>AUTO</item>
+        <item>Bypass</item>
+        <item>PCM</item>
+    </string-array>
+
+    <string-array name="system_app_manager_options" translatable="false">
+        <item>启动</item>
+        <item>详情</item>
+        <item>卸载</item>
+    </string-array>
+
+    <string-array name="system_power_on_source" translatable="true">
+        <item>默认</item>
+        <item>HD1</item>
+        <item>HD2</item>
+        <item>AV</item>
+    </string-array>
+
+<!--    英，德，法，西，意，啊，日，中，韩，葡萄牙-->
+    <string-array name="system_language_options" translatable="false">
+        <item>English</item>
+        <item>Das ist Deutsch.</item>
+        <item>En français</item>
+        <item>español</item>
+        <item>italiano</item>
+        <item>العربية</item>
+        <item>日本語</item>
+        <item>简体中文</item>
+        <item>한국어</item>
+        <item>português</item>
+    </string-array>
+
+
+</resources>
