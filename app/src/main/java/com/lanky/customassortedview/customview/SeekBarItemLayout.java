@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,16 +23,16 @@ import com.lanky.customassortedview.UIUtils;
  * @Version 1.0
  */
 public class SeekBarItemLayout extends LinearLayout {
-    private Context context;
+    private Context mContext;
 
-    private TextView tv_Name;
-    private String str_name;
-    private TextView tv_progress;
+    private TextView mTvName;
+    private String mStr_name;
+    private TextView mTvValue;
 
-    private SeekBar seekBar;
-    private int progress_max = 100;
-    private int progress_min = 0;
-    private int progress = 50;
+    private SeekBar mSeekBar;
+    private int mProgressMax = 100;
+    private int mProgressMin = 0;
+    private int mProgress = 50;
 
     private boolean showValue;
 
@@ -43,13 +42,13 @@ public class SeekBarItemLayout extends LinearLayout {
 
     public SeekBarItemLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.context = context;
+        this.mContext = context;
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SeekbarItemLayout);
 
-        str_name = typedArray.getString(R.styleable.SeekbarItemLayout_name);
-        progress_max = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_max, progress_max);
-        progress_min = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_min, progress_min);
+        mStr_name = typedArray.getString(R.styleable.SeekbarItemLayout_name);
+        mProgressMax = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_max, mProgressMax);
+        mProgressMin = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_min, mProgressMin);
         showValue = typedArray.getBoolean(R.styleable.SeekbarItemLayout_show_value,true);
 
         initView();
@@ -59,43 +58,43 @@ public class SeekBarItemLayout extends LinearLayout {
 
     private void initView() {
         //子控件绑定
-        final View view = LayoutInflater.from(context).inflate(R.layout.layout_item_seekbar, this);
+        final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_seekbar, this);
         view.setFocusable(true);
 
-        tv_Name = (TextView) view.findViewById(R.id.tv_item_name);
-        tv_Name.setFocusable(false);
-        tv_Name.setText(str_name);
+        mTvName = (TextView) view.findViewById(R.id.tv_item_name);
+        mTvName.setFocusable(false);
+        mTvName.setText(mStr_name);
 
-        tv_progress = (TextView) view.findViewById(R.id.tv_progress);
-        tv_progress.setFocusable(false);
+        mTvValue = (TextView) view.findViewById(R.id.tv_progress);
+        mTvValue.setFocusable(false);
         if (showValue) {
-            tv_progress.setVisibility(VISIBLE);
+            mTvValue.setVisibility(VISIBLE);
         } else {
-            tv_progress.setVisibility(INVISIBLE);
+            mTvValue.setVisibility(INVISIBLE);
         }
 
-        seekBar = (SeekBar) view.findViewById(R.id.seekbar_item);
-        seekBar.setMax(progress_max);
+        mSeekBar = (SeekBar) view.findViewById(R.id.seekbar_item);
+        mSeekBar.setMax(mProgressMax);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            seekBar.setMin(progress_min);
+            mSeekBar.setMin(mProgressMin);
         }
 
         view.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 UIUtils.animateView(view, hasFocus, 1.02f, 1.02f);
-                tv_Name.setSelected(hasFocus);
+                mTvName.setSelected(hasFocus);
                 if (hasFocus) {
-                    view.setBackground(context.getResources().getDrawable(R.drawable.item_focused_background));
+                    view.setBackground(mContext.getResources().getDrawable(R.drawable.item_focused_background));
                 } else {
-                    view.setBackground(context.getResources().getDrawable(R.drawable.item_unfocused_background));
+                    view.setBackground(mContext.getResources().getDrawable(R.drawable.item_unfocused_background));
                 }
             }
         });
     }
 
     public void setSeekBarChangeListener(SeekBar.OnSeekBarChangeListener seekBarChangeListener) {
-        seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        mSeekBar.setOnSeekBarChangeListener(seekBarChangeListener);
     }
 
     @Override
@@ -114,23 +113,23 @@ public class SeekBarItemLayout extends LinearLayout {
     }
 
     public void setSeekBarRight() {
-        progress = (progress >= progress_max) ? progress_max : progress + 1;
+        mProgress = (mProgress >= mProgressMax) ? mProgressMax : mProgress + 1;
         updateProgress();
     }
 
     public void setSeekBarLeft() {
-        progress = progress <= progress_min ? progress_min : progress - 1;
+        mProgress = mProgress <= mProgressMin ? mProgressMin : mProgress - 1;
         updateProgress();
     }
 
     public void setProgress(int progress){
-        this.progress = progress;
+        this.mProgress = progress;
         updateProgress();
     }
 
     private void updateProgress(){
-        seekBar.setProgress(progress);
-        tv_progress.setText(progress +"");
+        mSeekBar.setProgress(mProgress);
+        mTvValue.setText(mProgress +"");
     }
 }
 

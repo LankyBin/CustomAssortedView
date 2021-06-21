@@ -24,13 +24,13 @@ import com.lanky.customassortedview.UIUtils;
 public class SelectItemLayout extends LinearLayout{
     private Context mContext;
 
-    private String str_name;
-    private TextView tv_name;
-    private TextView tv_item_value;
+    private String mStr_name;
+    private TextView mTvName;
+    private TextView mTvValue;
 
     private OnOptionChangeListener mOnOptionChange;
 
-    private int selected_position = 0;
+    private int mSelectedPosition = 0;
     private String[] mOptions = {""};
 
     public SelectItemLayout(Context context) {
@@ -43,7 +43,7 @@ public class SelectItemLayout extends LinearLayout{
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SelectItemLayout);
 
-        str_name = typedArray.getString(R.styleable.SelectItemLayout_name);
+        mStr_name = typedArray.getString(R.styleable.SelectItemLayout_name);
 
         initView();
 
@@ -55,19 +55,19 @@ public class SelectItemLayout extends LinearLayout{
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_select, this);
         view.setFocusable(true);
 
-        tv_name = (TextView) view.findViewById(R.id.tv_item_name);
-        tv_name.setFocusable(false);
-        tv_name.setText(str_name);
+        mTvName = (TextView) view.findViewById(R.id.tv_item_name);
+        mTvName.setFocusable(false);
+        mTvName.setText(mStr_name);
 
-        tv_item_value = (TextView) view.findViewById(R.id.tv_item_value);
-        tv_item_value.setFocusable(false);
+        mTvValue = (TextView) view.findViewById(R.id.tv_item_value);
+        mTvValue.setFocusable(false);
 
         view.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 UIUtils.animateView(view, hasFocus, 1.02f, 1.02f);
-                tv_name.setSelected(hasFocus);
-                tv_item_value.setSelected(hasFocus);
+                mTvName.setSelected(hasFocus);
+                mTvValue.setSelected(hasFocus);
                 if (hasFocus) {
                     view.setBackground(mContext.getResources().getDrawable(R.drawable.item_focused_background));
                 } else {
@@ -88,18 +88,18 @@ public class SelectItemLayout extends LinearLayout{
     }
 
     public void setOptions(int position){
-        tv_item_value.setText(mOptions[position]);
+        mTvValue.setText(mOptions[position]);
     }
 
     private void showOptionSelector() {
         final AlertDialog dialog;
         AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(mContext).setIcon(R.mipmap.app_icon).setTitle(str_name)
-                .setSingleChoiceItems(mOptions, selected_position, new DialogInterface.OnClickListener() {
+        builder = new AlertDialog.Builder(mContext).setIcon(R.mipmap.app_icon).setTitle(mStr_name)
+                .setSingleChoiceItems(mOptions, mSelectedPosition, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        selected_position = i;
-                        tv_item_value.setText(mOptions[i]);
+                        mSelectedPosition = i;
+                        mTvValue.setText(mOptions[i]);
                         if (mOnOptionChange != null) {
                             mOnOptionChange.onOptionChanged(i);
                         }

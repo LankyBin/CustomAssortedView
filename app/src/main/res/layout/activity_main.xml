@@ -27,64 +27,34 @@
             android:orientation="vertical">
 
             <com.lanky.customassortedview.customview.DefaultItemLayout
-                android:id="@+id/default_item_layout1"
+                android:id="@+id/default_app_manager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:name="default item1" />
-
-            <com.lanky.customassortedview.customview.DefaultItemLayout
-                android:id="@+id/default_item_layout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:name="default item2" />
+                app:name="app manager" />
 
             <com.lanky.customassortedview.customview.SelectItemLayout
-                android:id="@+id/select_item_layout1"
+                android:id="@+id/select_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:name="select item1" />
-
-            <com.lanky.customassortedview.customview.SelectItemLayout
-                android:id="@+id/select_item_layout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:name="select item2" />
+                app:name="language" />
 
             <com.lanky.customassortedview.customview.SeekBarItemLayout
-                android:id="@+id/seekbar_item_layout1"
+                android:id="@+id/seekbar_brightness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:name="seekbar item1"
-                app:seekbar_progress_max="100"
-                app:seekbar_progress_min="0" />
-
-            <com.lanky.customassortedview.customview.SeekBarItemLayout
-                android:id="@+id/seekbar_item_layout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:name="seekbar item2"
+                app:name="brightness"
                 app:seekbar_progress_max="100"
                 app:seekbar_progress_min="0" />
 
             <com.lanky.customassortedview.customview.SwitchItemLayout
-                android:id="@+id/switch_item_layout1"
+                android:id="@+id/switch_keypad_sound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:name="switch item1" />
-
-            <com.lanky.customassortedview.customview.SwitchItemLayout
-                android:id="@+id/switch_item_layout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:name="switch item2" />
+                app:name="keypad sound" />
 
         </LinearLayout>
 

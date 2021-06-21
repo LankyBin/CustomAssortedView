@@ -21,11 +21,10 @@ import com.lanky.customassortedview.UIUtils;
  * @Version 1.0
  */
 public class SwitchItemLayout extends LinearLayout {
-    private Context context;
+    private Context mContext;
 
-    private TextView tv_Name;
-    private String str_name;
-
+    private TextView mTvName;
+    private String mStr_name;
     private Switch mSwitch;
 
     public SwitchItemLayout(Context context) {
@@ -34,11 +33,11 @@ public class SwitchItemLayout extends LinearLayout {
 
     public SwitchItemLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.context = context;
+        this.mContext = context;
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SwitchItemLayout);
 
-        str_name = typedArray.getString(R.styleable.SwitchItemLayout_name);
+        mStr_name = typedArray.getString(R.styleable.SwitchItemLayout_name);
 
         initView();
 
@@ -46,14 +45,12 @@ public class SwitchItemLayout extends LinearLayout {
     }
 
     private void initView() {
-        //子控件绑定
-        final View view = LayoutInflater.from(context).inflate(R.layout.layout_item_switch, this);
+        final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_switch, this);
         view.setFocusable(true);
 
-        tv_Name = (TextView) view.findViewById(R.id.tv_item_name);
-        tv_Name.setFocusable(false);
-        tv_Name.setText(str_name);
-//        tv_Name.setText("asdadf");
+        mTvName = (TextView) view.findViewById(R.id.tv_item_name);
+        mTvName.setFocusable(false);
+        mTvName.setText(mStr_name);
 
         mSwitch = (Switch) view.findViewById(R.id.switch_item);
 
@@ -61,11 +58,11 @@ public class SwitchItemLayout extends LinearLayout {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 UIUtils.animateView(view, hasFocus, 1.02f, 1.02f);
-                tv_Name.setSelected(hasFocus);
+                mTvName.setSelected(hasFocus);
                 if (hasFocus) {
-                    view.setBackground(context.getResources().getDrawable(R.drawable.item_focused_background));
+                    view.setBackground(mContext.getResources().getDrawable(R.drawable.item_focused_background));
                 } else {
-                    view.setBackground(context.getResources().getDrawable(R.drawable.item_unfocused_background));
+                    view.setBackground(mContext.getResources().getDrawable(R.drawable.item_unfocused_background));
                 }
             }
         });
