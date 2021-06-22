@@ -1,4 +1,4 @@
-package com.lanky.customassortedview;
+package com.lanky.customsettingview;
 
 import android.view.View;
 

@@ -1,4 +1,4 @@
-package com.lanky.customassortedview.customview;
+package com.lanky.customsettingview;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -9,9 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.lanky.customassortedview.R;
-import com.lanky.customassortedview.UIUtils;
 
 
 /**

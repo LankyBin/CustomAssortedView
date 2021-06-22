@@ -7,10 +7,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lanky.customassortedview.customview.DefaultItemLayout;
-import com.lanky.customassortedview.customview.SeekBarItemLayout;
-import com.lanky.customassortedview.customview.SelectItemLayout;
-import com.lanky.customassortedview.customview.SwitchItemLayout;
+import com.lanky.customsettingview.DefaultItemLayout;
+import com.lanky.customsettingview.SeekBarItemLayout;
+import com.lanky.customsettingview.SelectItemLayout;
+import com.lanky.customsettingview.SwitchItemLayout;
 
 public class MainActivity extends AppCompatActivity{
 

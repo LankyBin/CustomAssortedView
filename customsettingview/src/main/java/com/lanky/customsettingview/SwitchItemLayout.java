@@ -1,4 +1,4 @@
-package com.lanky.customassortedview.customview;
+package com.lanky.customsettingview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,9 +9,6 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import com.lanky.customassortedview.R;
-import com.lanky.customassortedview.UIUtils;
 
 /**
  * @ClassName SwitchItemLayout
