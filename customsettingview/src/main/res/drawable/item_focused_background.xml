@@ -5,7 +5,7 @@
     android:color="@color/item_focused_solid"/>
 
 <stroke
-    android:width="2dp"
+    android:width="3dp"
     android:color="@color/item_focused_stroke" />
 
 <padding
@@ -15,6 +15,6 @@
     android:top="0dp" />
 
 <corners
-    android:radius="8dp"/>
+    android:radius="10dp"/>
 
 </shape>
