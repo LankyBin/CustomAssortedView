@@ -12,6 +12,7 @@ CustomAssortedView of Setting on AndroidTV
 带有Switch开关的设置项View
 
 # 集成方法：
+[![](https://jitpack.io/v/LankyBin/CustomAssortedView.svg)](https://jitpack.io/#LankyBin/CustomAssortedView)
 Step 1. Add the JitPack repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
