@@ -3,38 +3,32 @@
 <!--    Common-->
     <attr name="icon" format="reference"/>
     <attr name="name" format="string|reference"/>
+    <attr name="name_color" format="reference|color"/>
+
     <attr name="seekbar_progress_min" format="integer"/>
     <attr name="seekbar_progress_max" format="integer"/>
 
     <declare-styleable name="DefaultItemLayout">
-
         <attr name="name"/>
         <attr name="icon"/>
-
     </declare-styleable>
 
     <declare-styleable name="SelectItemLayout">
-
         <attr name="name"/>
         <attr name="icon"/>
         <attr name="options" format="reference"/>
-
     </declare-styleable>
 
     <declare-styleable name="SwitchItemLayout">
-
         <attr name="name"/>
         <attr name="icon"/>
-
     </declare-styleable>
 
     <declare-styleable name="SeekbarItemLayout">
-
         <attr name="name"/>
         <attr name="icon"/>
         <attr name="seekbar_progress_min"/>
         <attr name="seekbar_progress_max"/>
         <attr name="show_value" format="boolean"/>
-
     </declare-styleable>
 </resources>
