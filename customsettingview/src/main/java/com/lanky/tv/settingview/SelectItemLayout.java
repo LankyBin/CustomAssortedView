@@ -1,4 +1,4 @@
-package com.lanky.customsettingview;
+package com.lanky.tv.settingview;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -11,10 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.lanky.tv.R;
+import com.lanky.tv.UIUtils;
+
 
 /**
  * @ClassName SelectItemLayout
- * @Description TODO
+ * @Description 多选设置项
  * @Author LankyBin
  * @Date 2021/5/13 10:03
  * @Version 1.0
@@ -24,8 +27,10 @@ public class SelectItemLayout extends LinearLayout{
 
     private ImageView mImageView;
     private int mIconResID;
-    private String mStr_name;
+
     private TextView mTvName;
+    private String mStr_name;
+
     private TextView mTvValue;
 
     private OnOptionChangeListener mOnOptionChange;
@@ -43,8 +48,9 @@ public class SelectItemLayout extends LinearLayout{
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SelectItemLayout);
 
-        mStr_name = typedArray.getString(R.styleable.SelectItemLayout_name);
         mIconResID = typedArray.getResourceId(R.styleable.SelectItemLayout_icon,R.mipmap.icon_default);
+        mStr_name = typedArray.getString(R.styleable.SelectItemLayout_name);
+        mOptions = mContext.getResources().getStringArray(typedArray.getResourceId(R.styleable.SelectItemLayout_options,R.array.select_options_default));
 
         initView();
 

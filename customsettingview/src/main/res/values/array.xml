@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="select_options_default" translatable="false">
+        <item>option1</item>
+        <item>option2</item>
+        <item>option3</item>
+    </string-array>
+
+</resources>

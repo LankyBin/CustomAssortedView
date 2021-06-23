@@ -1,4 +1,4 @@
-package com.lanky.customsettingview;
+package com.lanky.tv.settingview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.lanky.tv.R;
+import com.lanky.tv.UIUtils;
 
 /**
  * @ClassName SwitchItemLayout

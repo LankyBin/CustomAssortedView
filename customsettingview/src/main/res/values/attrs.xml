@@ -17,6 +17,7 @@
 
         <attr name="name"/>
         <attr name="icon"/>
+        <attr name="options" format="reference"/>
 
     </declare-styleable>
 

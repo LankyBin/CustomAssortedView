@@ -26,21 +26,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.lanky.customsettingview.DefaultItemLayout
+            <com.lanky.tv.settingview.DefaultItemLayout
                 android:id="@+id/default_app_manager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:name="app manager" />
+                app:name="app manager"
+                app:icon="@mipmap/ic_launcher"/>
 
-            <com.lanky.customsettingview.SelectItemLayout
+            <com.lanky.tv.settingview.SelectItemLayout
                 android:id="@+id/select_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:name="language" />
+                app:name="language"
+                app:options="@array/system_language_options"/>
 
-            <com.lanky.customsettingview.SeekBarItemLayout
+            <com.lanky.tv.settingview.SeekBarItemLayout
                 android:id="@+id/seekbar_brightness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +51,7 @@
                 app:seekbar_progress_max="100"
                 app:seekbar_progress_min="0" />
 
-            <com.lanky.customsettingview.SwitchItemLayout
+            <com.lanky.tv.settingview.SwitchItemLayout
                 android:id="@+id/switch_keypad_sound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

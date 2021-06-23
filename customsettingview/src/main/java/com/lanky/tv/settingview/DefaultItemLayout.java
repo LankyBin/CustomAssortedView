@@ -1,4 +1,4 @@
-package com.lanky.customsettingview;
+package com.lanky.tv.settingview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.lanky.tv.R;
+import com.lanky.tv.UIUtils;
 
 /**
  * @ClassName DefaultItem
@@ -21,6 +24,7 @@ public class DefaultItemLayout extends LinearLayout {
 
     private ImageView mImageView;
     private int mIconResID;
+
     private TextView mTvName;
     private String mStr_name;
 
@@ -34,8 +38,8 @@ public class DefaultItemLayout extends LinearLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DefaultItemLayout);
 
-        mStr_name = typedArray.getString(R.styleable.DefaultItemLayout_name);
         mIconResID = typedArray.getResourceId(R.styleable.DefaultItemLayout_icon,R.mipmap.icon_default);
+        mStr_name = typedArray.getString(R.styleable.DefaultItemLayout_name);
 
         initView();
 
@@ -46,12 +50,12 @@ public class DefaultItemLayout extends LinearLayout {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_default, this);
         view.setFocusable(true);
 
+        mImageView = view.findViewById(R.id.iv_icon);
+        mImageView.setImageResource(mIconResID);
+
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
         mTvName.setText(mStr_name);
-
-        mImageView = view.findViewById(R.id.iv_icon);
-        mImageView.setImageResource(mIconResID);
 
         view.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override

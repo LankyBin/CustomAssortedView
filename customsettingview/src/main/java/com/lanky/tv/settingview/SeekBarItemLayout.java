@@ -1,4 +1,4 @@
-package com.lanky.customsettingview;
+package com.lanky.tv.settingview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.lanky.tv.R;
+import com.lanky.tv.UIUtils;
 
 
 /**
@@ -25,14 +28,16 @@ public class SeekBarItemLayout extends LinearLayout {
 
     private ImageView mImageView;
     private int mIconResID;
+
     private TextView mTvName;
     private String mStr_name;
-    private TextView mTvValue;
 
     private SeekBar mSeekBar;
     private int mProgressMax = 100;
     private int mProgressMin = 0;
     private int mProgress = 50;
+
+    private TextView mTvValue;
 
     private boolean showValue;
 
@@ -46,8 +51,8 @@ public class SeekBarItemLayout extends LinearLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SeekbarItemLayout);
 
-        mStr_name = typedArray.getString(R.styleable.SeekbarItemLayout_name);
         mIconResID = typedArray.getResourceId(R.styleable.SeekbarItemLayout_icon,R.mipmap.icon_default);
+        mStr_name = typedArray.getString(R.styleable.SeekbarItemLayout_name);
         mProgressMax = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_max, mProgressMax);
         mProgressMin = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_min, mProgressMin);
         showValue = typedArray.getBoolean(R.styleable.SeekbarItemLayout_show_value,true);
@@ -58,7 +63,6 @@ public class SeekBarItemLayout extends LinearLayout {
     }
 
     private void initView() {
-        //子控件绑定
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_seekbar, this);
         view.setFocusable(true);
 

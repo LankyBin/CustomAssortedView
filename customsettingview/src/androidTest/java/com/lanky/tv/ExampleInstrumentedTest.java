@@ -1,4 +1,4 @@
-package com.lanky.customsettingview;
+package com.lanky.tv;
 
 import android.content.Context;
 

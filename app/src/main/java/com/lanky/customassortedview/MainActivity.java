@@ -7,10 +7,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lanky.customsettingview.DefaultItemLayout;
-import com.lanky.customsettingview.SeekBarItemLayout;
-import com.lanky.customsettingview.SelectItemLayout;
-import com.lanky.customsettingview.SwitchItemLayout;
+import com.lanky.tv.settingview.DefaultItemLayout;
+import com.lanky.tv.settingview.SeekBarItemLayout;
+import com.lanky.tv.settingview.SelectItemLayout;
+import com.lanky.tv.settingview.SwitchItemLayout;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity{
         mSeekbar_brightness = (SeekBarItemLayout) findViewById(R.id.seekbar_brightness);
         mSwitch_keypad_sound = (SwitchItemLayout) findViewById(R.id.switch_keypad_sound);
 
-        mSelect_language.initOptions(R.array.system_language_options);
+//        mSelect_language.initOptions(R.array.system_language_options);
         mSelect_language.setOnOptionChangeListener(new SelectItemLayout.OnOptionChangeListener() {
             @Override
             public void onOptionChanged(int position) {
