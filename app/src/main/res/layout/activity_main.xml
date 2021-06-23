@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@drawable/item_background"
                 app:name="app manager"
                 app:icon="@mipmap/ic_launcher"/>
 
@@ -39,6 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@drawable/item_background"
                 app:name="language"
                 app:options="@array/system_language_options"/>
 
@@ -47,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@drawable/item_background"
                 app:name="brightness"
                 app:seekbar_progress_max="100"
                 app:seekbar_progress_min="0" />
@@ -56,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@drawable/item_background"
                 app:name="keypad sound" />
 
         </LinearLayout>
