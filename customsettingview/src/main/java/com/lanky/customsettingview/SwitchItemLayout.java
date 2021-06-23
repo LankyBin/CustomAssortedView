@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -20,6 +21,8 @@ import android.widget.TextView;
 public class SwitchItemLayout extends LinearLayout {
     private Context mContext;
 
+    private ImageView mImageView;
+    private int mIconResID;
     private TextView mTvName;
     private String mStr_name;
     private Switch mSwitch;
@@ -35,6 +38,7 @@ public class SwitchItemLayout extends LinearLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SwitchItemLayout);
 
         mStr_name = typedArray.getString(R.styleable.SwitchItemLayout_name);
+        mIconResID = typedArray.getResourceId(R.styleable.SwitchItemLayout_icon,R.mipmap.icon_default);
 
         initView();
 
@@ -44,6 +48,9 @@ public class SwitchItemLayout extends LinearLayout {
     private void initView() {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_switch, this);
         view.setFocusable(true);
+
+        mImageView = view.findViewById(R.id.iv_icon);
+        mImageView.setImageResource(mIconResID);
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);

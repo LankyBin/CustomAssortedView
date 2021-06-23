@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!--    Common-->
+    <attr name="icon" format="reference"/>
     <attr name="name" format="string|reference"/>
     <attr name="background" format="reference"/>
     <attr name="seekbar_progress_min" format="integer"/>
@@ -9,25 +10,28 @@
     <declare-styleable name="DefaultItemLayout">
 
         <attr name="name"/>
-        <attr name="background"/>
+        <attr name="icon"/>
 
     </declare-styleable>
 
     <declare-styleable name="SelectItemLayout">
 
         <attr name="name"/>
+        <attr name="icon"/>
 
     </declare-styleable>
 
     <declare-styleable name="SwitchItemLayout">
 
         <attr name="name"/>
+        <attr name="icon"/>
 
     </declare-styleable>
 
     <declare-styleable name="SeekbarItemLayout">
 
         <attr name="name"/>
+        <attr name="icon"/>
         <attr name="seekbar_progress_min"/>
         <attr name="seekbar_progress_max"/>
         <attr name="show_value" format="boolean"/>

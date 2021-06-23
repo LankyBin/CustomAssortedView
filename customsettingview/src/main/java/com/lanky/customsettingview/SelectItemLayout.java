@@ -7,6 +7,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,6 +22,8 @@ import android.widget.TextView;
 public class SelectItemLayout extends LinearLayout{
     private Context mContext;
 
+    private ImageView mImageView;
+    private int mIconResID;
     private String mStr_name;
     private TextView mTvName;
     private TextView mTvValue;
@@ -41,6 +44,7 @@ public class SelectItemLayout extends LinearLayout{
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SelectItemLayout);
 
         mStr_name = typedArray.getString(R.styleable.SelectItemLayout_name);
+        mIconResID = typedArray.getResourceId(R.styleable.SelectItemLayout_icon,R.mipmap.icon_default);
 
         initView();
 
@@ -50,6 +54,9 @@ public class SelectItemLayout extends LinearLayout{
     private void initView() {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_select, this);
         view.setFocusable(true);
+
+        mImageView = view.findViewById(R.id.iv_icon);
+        mImageView.setImageResource(mIconResID);
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);

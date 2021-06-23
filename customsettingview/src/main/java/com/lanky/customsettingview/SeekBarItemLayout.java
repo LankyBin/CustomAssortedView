@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ import android.widget.TextView;
 public class SeekBarItemLayout extends LinearLayout {
     private Context mContext;
 
+    private ImageView mImageView;
+    private int mIconResID;
     private TextView mTvName;
     private String mStr_name;
     private TextView mTvValue;
@@ -44,6 +47,7 @@ public class SeekBarItemLayout extends LinearLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SeekbarItemLayout);
 
         mStr_name = typedArray.getString(R.styleable.SeekbarItemLayout_name);
+        mIconResID = typedArray.getResourceId(R.styleable.SeekbarItemLayout_icon,R.mipmap.icon_default);
         mProgressMax = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_max, mProgressMax);
         mProgressMin = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_min, mProgressMin);
         showValue = typedArray.getBoolean(R.styleable.SeekbarItemLayout_show_value,true);
@@ -57,6 +61,9 @@ public class SeekBarItemLayout extends LinearLayout {
         //子控件绑定
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_seekbar, this);
         view.setFocusable(true);
+
+        mImageView = view.findViewById(R.id.iv_icon);
+        mImageView.setImageResource(mIconResID);
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
