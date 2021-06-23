@@ -6,4 +6,9 @@
 
     <color name="item_name_text_color">#88888888</color>
     <color name="item_options_text_color">#8888FF88</color>
+
+    <color name="dialog_solid">#AA000000</color>
+    <color name="dialog_stroke">#9fe4ff</color>
+    <color name="dialog_title_text_color">#fef583</color>
+    <color name="dialog_text_color">#ffd966</color>
 </resources>
