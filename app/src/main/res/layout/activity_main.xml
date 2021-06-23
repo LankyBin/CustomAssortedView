@@ -33,6 +33,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/item_background"
                 app:name="app manager"
+                app:name_color="@color/background"
                 app:icon="@mipmap/ic_launcher"/>
 
             <com.lanky.tv.settingview.SelectItemLayout

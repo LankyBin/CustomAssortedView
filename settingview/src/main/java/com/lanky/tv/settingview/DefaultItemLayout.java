@@ -26,6 +26,7 @@ public class DefaultItemLayout extends LinearLayout {
     private int mIconResID;
 
     private TextView mTvName;
+    private int mNameColorID;
     private String mStr_name;
 
     public DefaultItemLayout(Context context) {
@@ -38,7 +39,8 @@ public class DefaultItemLayout extends LinearLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DefaultItemLayout);
 
-        mIconResID = typedArray.getResourceId(R.styleable.DefaultItemLayout_icon,R.mipmap.icon_default);
+        mIconResID = typedArray.getResourceId(R.styleable.DefaultItemLayout_icon, R.mipmap.icon_default);
+        mNameColorID = typedArray.getResourceId(R.styleable.DefaultItemLayout_name_color, R.color.item_name_text_color);
         mStr_name = typedArray.getString(R.styleable.DefaultItemLayout_name);
 
         initView();
@@ -55,12 +57,13 @@ public class DefaultItemLayout extends LinearLayout {
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
+        mTvName.setTextColor(mContext.getColor(mNameColorID));
         mTvName.setText(mStr_name);
 
         view.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                UIUtils.animateView(view,hasFocus,1.02f,1.02f);
+                UIUtils.animateView(view, hasFocus, 1.02f, 1.02f);
                 mTvName.setSelected(hasFocus);
             }
         });

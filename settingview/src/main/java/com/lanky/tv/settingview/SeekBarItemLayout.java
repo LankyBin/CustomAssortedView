@@ -30,6 +30,7 @@ public class SeekBarItemLayout extends LinearLayout {
     private int mIconResID;
 
     private TextView mTvName;
+    private int mNameColorID;
     private String mStr_name;
 
     private SeekBar mSeekBar;
@@ -51,11 +52,12 @@ public class SeekBarItemLayout extends LinearLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SeekbarItemLayout);
 
-        mIconResID = typedArray.getResourceId(R.styleable.SeekbarItemLayout_icon,R.mipmap.icon_default);
+        mIconResID = typedArray.getResourceId(R.styleable.SeekbarItemLayout_icon, R.mipmap.icon_default);
+        mNameColorID = typedArray.getResourceId(R.styleable.DefaultItemLayout_name_color, R.color.item_name_text_color);
         mStr_name = typedArray.getString(R.styleable.SeekbarItemLayout_name);
         mProgressMax = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_max, mProgressMax);
         mProgressMin = typedArray.getInt(R.styleable.SeekbarItemLayout_seekbar_progress_min, mProgressMin);
-        showValue = typedArray.getBoolean(R.styleable.SeekbarItemLayout_show_value,true);
+        showValue = typedArray.getBoolean(R.styleable.SeekbarItemLayout_show_value, true);
 
         initView();
 
@@ -71,6 +73,7 @@ public class SeekBarItemLayout extends LinearLayout {
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
+        mTvName.setTextColor(mContext.getColor(mNameColorID));
         mTvName.setText(mStr_name);
 
         mTvValue = (TextView) view.findViewById(R.id.tv_progress);
@@ -125,14 +128,14 @@ public class SeekBarItemLayout extends LinearLayout {
         updateProgress();
     }
 
-    public void setProgress(int progress){
+    public void setProgress(int progress) {
         this.mProgress = progress;
         updateProgress();
     }
 
-    private void updateProgress(){
+    private void updateProgress() {
         mSeekBar.setProgress(mProgress);
-        mTvValue.setText(mProgress +"");
+        mTvValue.setText(mProgress + "");
     }
 }
 

@@ -26,8 +26,11 @@ public class SwitchItemLayout extends LinearLayout {
 
     private ImageView mImageView;
     private int mIconResID;
+
     private TextView mTvName;
+    private int mNameColorID;
     private String mStr_name;
+
     private Switch mSwitch;
 
     public SwitchItemLayout(Context context) {
@@ -40,8 +43,9 @@ public class SwitchItemLayout extends LinearLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SwitchItemLayout);
 
+        mIconResID = typedArray.getResourceId(R.styleable.SwitchItemLayout_icon, R.mipmap.icon_default);
+        mNameColorID = typedArray.getResourceId(R.styleable.DefaultItemLayout_name_color, R.color.item_name_text_color);
         mStr_name = typedArray.getString(R.styleable.SwitchItemLayout_name);
-        mIconResID = typedArray.getResourceId(R.styleable.SwitchItemLayout_icon,R.mipmap.icon_default);
 
         initView();
 
@@ -57,6 +61,7 @@ public class SwitchItemLayout extends LinearLayout {
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
+        mTvName.setTextColor(mContext.getColor(mNameColorID));
         mTvName.setText(mStr_name);
 
         mSwitch = (Switch) view.findViewById(R.id.switch_item);
@@ -76,7 +81,7 @@ public class SwitchItemLayout extends LinearLayout {
         });
     }
 
-    public void setOnCheckedCHangeListener(CompoundButton.OnCheckedChangeListener l){
+    public void setOnCheckedCHangeListener(CompoundButton.OnCheckedChangeListener l) {
         mSwitch.setOnCheckedChangeListener(l);
 
     }
@@ -85,7 +90,7 @@ public class SwitchItemLayout extends LinearLayout {
         mSwitch.setChecked(checked);
     }
 
-    public boolean isCheched(){
+    public boolean isCheched() {
         return mSwitch.isChecked();
     }
 }

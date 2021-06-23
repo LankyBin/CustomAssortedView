@@ -22,13 +22,14 @@ import com.lanky.tv.UIUtils;
  * @Date 2021/5/13 10:03
  * @Version 1.0
  */
-public class SelectItemLayout extends LinearLayout{
+public class SelectItemLayout extends LinearLayout {
     private Context mContext;
 
     private ImageView mImageView;
     private int mIconResID;
 
     private TextView mTvName;
+    private int mNameColorID;
     private String mStr_name;
 
     private TextView mTvValue;
@@ -48,9 +49,10 @@ public class SelectItemLayout extends LinearLayout{
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SelectItemLayout);
 
-        mIconResID = typedArray.getResourceId(R.styleable.SelectItemLayout_icon,R.mipmap.icon_default);
+        mIconResID = typedArray.getResourceId(R.styleable.SelectItemLayout_icon, R.mipmap.icon_default);
+        mNameColorID = typedArray.getResourceId(R.styleable.DefaultItemLayout_name_color, R.color.item_name_text_color);
         mStr_name = typedArray.getString(R.styleable.SelectItemLayout_name);
-        mOptions = mContext.getResources().getStringArray(typedArray.getResourceId(R.styleable.SelectItemLayout_options,R.array.select_options_default));
+        mOptions = mContext.getResources().getStringArray(typedArray.getResourceId(R.styleable.SelectItemLayout_options, R.array.select_options_default));
 
         initView();
 
@@ -66,6 +68,7 @@ public class SelectItemLayout extends LinearLayout{
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
+        mTvName.setTextColor(mContext.getColor(mNameColorID));
         mTvName.setText(mStr_name);
 
         mTvValue = (TextView) view.findViewById(R.id.tv_item_value);
@@ -87,11 +90,11 @@ public class SelectItemLayout extends LinearLayout{
         });
     }
 
-    public void initOptions(int array_res){
+    public void initOptions(int array_res) {
         mOptions = getResources().getStringArray(array_res);
     }
 
-    public void setOptions(int position){
+    public void setOptions(int position) {
         mTvValue.setText(mOptions[position]);
     }
 
@@ -119,7 +122,7 @@ public class SelectItemLayout extends LinearLayout{
         this.mOnOptionChange = onOptionChangeListener;
     }
 
-    public interface OnOptionChangeListener{
+    public interface OnOptionChangeListener {
         void onOptionChanged(int position);
     }
 }
