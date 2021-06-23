@@ -29,7 +29,8 @@
         android:id="@+id/tv_progress"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="0.1"
         android:gravity="center"
-        android:layout_weight="0.1"/>
+        android:textColor="@color/item_options_text_color" />
 
 </LinearLayout>

@@ -4,19 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="background">#FFFFFF</color>
-
-    <color name="item_name_text_color">#000000</color>
-    <color name="item_options_text_color">#66aa66</color>
-
-    <color name="dialog_solid">#AA000000</color>
-    <color name="dialog_stroke">#9fe4ff</color>
-    <color name="dialog_title_text_color">#fef583</color>
-    <color name="dialog_text_color">#ffd966</color>
-
-    <color name="item_unfocused_solid">#44000000</color>
-    <color name="item_unfocused_stroke">#4455AAff</color>
-    <color name="item_focused_solid">#66000000</color>
-    <color name="item_focused_stroke">#FF55AAff</color>
-
+    <color name="item_name_text_color">#88888888</color>
+    <color name="item_options_text_color">#8888FF88</color>
 </resources>
