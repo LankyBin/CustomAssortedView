@@ -1,2 +1,2 @@
-include ':app', ':customsettingview'
+include ':app', ':settingview'
 rootProject.name='CustomAssortedView'
