@@ -16,7 +16,7 @@
 
     <color name="item_unfocused_solid">#44000000</color>
     <color name="item_unfocused_stroke">#4455AAff</color>
-    <color name="item_focused_solid">#88000000</color>
+    <color name="item_focused_solid">#66000000</color>
     <color name="item_focused_stroke">#FF55AAff</color>
 
 </resources>

@@ -2,12 +2,14 @@
 <resources>
 <!--    Common-->
     <attr name="name" format="string|reference"/>
+    <attr name="background" format="reference"/>
     <attr name="seekbar_progress_min" format="integer"/>
     <attr name="seekbar_progress_max" format="integer"/>
 
     <declare-styleable name="DefaultItemLayout">
 
         <attr name="name"/>
+        <attr name="background"/>
 
     </declare-styleable>
 

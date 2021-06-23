@@ -50,7 +50,7 @@ public class SelectItemLayout extends LinearLayout{
     private void initView() {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item_select, this);
         view.setFocusable(true);
-        view.setBackground(mContext.getResources().getDrawable(R.drawable.item_unfocused_background));
+        view.setBackground(mContext.getResources().getDrawable(R.drawable.item_background));
 
         mTvName = (TextView) view.findViewById(R.id.tv_item_name);
         mTvName.setFocusable(false);
@@ -65,11 +65,6 @@ public class SelectItemLayout extends LinearLayout{
                 UIUtils.animateView(view, hasFocus, 1.02f, 1.02f);
                 mTvName.setSelected(hasFocus);
                 mTvValue.setSelected(hasFocus);
-                if (hasFocus) {
-                    view.setBackground(mContext.getResources().getDrawable(R.drawable.item_focused_background));
-                } else {
-                    view.setBackground(mContext.getResources().getDrawable(R.drawable.item_unfocused_background));
-                }
             }
         });
         view.setOnClickListener(new OnClickListener() {
