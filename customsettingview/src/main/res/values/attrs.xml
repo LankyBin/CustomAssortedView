@@ -3,7 +3,6 @@
 <!--    Common-->
     <attr name="icon" format="reference"/>
     <attr name="name" format="string|reference"/>
-    <attr name="background" format="reference"/>
     <attr name="seekbar_progress_min" format="integer"/>
     <attr name="seekbar_progress_max" format="integer"/>
 
